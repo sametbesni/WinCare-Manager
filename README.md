@@ -16,7 +16,7 @@ WinCare Manager, Windows için bir bakım ve yönetim aracıdır. Sistemi analiz
 | Başlangıç Programları | Başlangıç girdilerini etkinleştirir veya devre dışı bırakır (silmez) | Evet, onay ve yedekle |
 | İşlem Yöneticisi | Çalışan işlemleri, CPU ve bellek kullanımını, dosya yollarını gösterir | Hayır |
 | Kayıt Defteri | Anahtarları gösterir ve yedekler | Hayır (yalnızca yedek alır) |
-| Windows Hizmetleri | Hizmet durumu ve başlangıç türü | Hayır |
+| Windows Hizmetleri | Hizmet durumu ve başlangıç türü; güvenli hizmetleri başlatma ve durdurma (kritik ve güvenlik hizmetleri korunur) | Evet, onay ve yönetici yetkisiyle |
 | Disk Yönetimi | Sürücü doluluğu, fiziksel disk sağlığı | Hayır |
 | Yedekleme ve Geri Yükleme | `.reg` yedeklerini doğrular ve geri yükler | Evet, onay ve yedekle |
 | Sistem Tanılama | Sağlık kontrolleri, Windows olay günlüğü | Hayır |
@@ -157,7 +157,6 @@ Uygulamanın ağ erişimi, telemetrisi, hesap sistemi ve dış servis bağlantı
 
 ## Sonraki adımlar
 
-- Hizmetleri kontrollü biçimde başlatma ve durdurma
 - İşlemlerde dijital imza (imzalı/imzasız) bilgisi
 - Kod imzalama (SmartScreen uyarısını kaldırmak için)
 

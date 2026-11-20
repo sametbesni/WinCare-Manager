@@ -20,6 +20,7 @@ KIND_KEYS = {
     "backup.restore": K("kind_backup_restore"),
     "maintenance.analysis": K("kind_maintenance_analysis"), "maintenance.schedule": K("kind_maintenance_schedule"),
     "maintenance.unschedule": K("kind_maintenance_unschedule"), "app.prepare_uninstall": K("kind_prepare_uninstall"),
+    "service.start": K("kind_service_start"), "service.stop": K("kind_service_stop"),
 }
 
 

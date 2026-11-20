@@ -1,6 +1,12 @@
 # Değişiklik Kaydı
 
 ## Yayınlanmamış
+- **Windows Hizmetleri:** Seçilen hizmet başlatılıp durdurulabiliyor. İşlem, işlem motoru üzerinden onay, yönetici yetkisi, deneme modu ve geçmiş kaydıyla yapılıyor. Güvenlik kuralları:
+  - kritik Windows ve güvenlik hizmetleri (RPC, Defender, güvenlik duvarı, olay günlüğü, Windows Update vb.) durdurulamaz;
+  - başka çalışan hizmetlerin bağlı olduğu hizmetler durdurulmaz;
+  - devre dışı hizmetler başlatılmaz;
+  - başlangıç türü hiçbir zaman değiştirilmez.
+- Hizmetler tablosunda uzun adlar artık diğer sütunları ekran dışına itmiyor.
 - **Kurulum dosyası** (Inno Setup, `scripts/build_installer.ps1`):
   - varsayılan olarak yönetici yetkisi istemeden kurulur;
   - **masaüstü kısayolu** (varsayılan olarak işaretli) ve Başlat menüsü girdisi oluşturur;
