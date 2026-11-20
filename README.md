@@ -36,7 +36,8 @@ WinCare Manager, Windows için bir bakım ve yönetim aracıdır. Sistemi analiz
 
 ## Kurulum (kullanıcılar için)
 
-`WinCareManager-Setup-<sürüm>.exe` dosyasını çalıştırın:
+[Releases sayfasından](https://github.com/sametbesni/WinCare-Manager/releases/latest) `WinCareManager-Setup-<sürüm>.exe` dosyasını indirip çalıştırın. Kurulum istemiyorsanız `portable.zip` dosyasını bir klasöre çıkarıp kullanabilirsiniz.
+
 - Varsayılan olarak yalnızca sizin için ve **yönetici yetkisi istemeden** kurulur. İsterseniz "tüm kullanıcılar için" seçeneğini seçebilirsiniz.
 - **Masaüstü kısayolu** varsayılan olarak oluşturulur; istemezseniz kurulumda işareti kaldırın. Başlat menüsüne de eklenir.
 - Program "Uygulamalar" listesinde görünür ve oradan kaldırılabilir.

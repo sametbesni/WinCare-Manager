@@ -19,7 +19,7 @@ Overview · Junk File Cleanup (moves selected files to the **Recycle Bin**) · S
 
 ## Installing (users)
 
-Run `WinCareManager-Setup-<version>.exe`. By default it installs for the current user without administrator rights, creates a **desktop shortcut** (optional) and a Start menu entry, and registers in Windows Apps for uninstalling. SmartScreen may warn because the installer is not code-signed yet.
+Download `WinCareManager-Setup-<version>.exe` from the [Releases page](https://github.com/sametbesni/WinCare-Manager/releases/latest) and run it (or use the portable ZIP). By default it installs for the current user without administrator rights, creates a **desktop shortcut** (optional) and a Start menu entry, and registers in Windows Apps for uninstalling. SmartScreen may warn because the installer is not code-signed yet.
 
 ## Development setup
 
