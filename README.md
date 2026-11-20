@@ -1,6 +1,6 @@
 # WinCare Manager
 
-**Sürüm:** 0.2.0 · [English](README_EN.md)
+**Sürüm:** 0.3.0 · [English](README_EN.md)
 **Platform:** Windows 10/11 (64 bit)
 **Arayüz:** Türkçe ve English
 **Çalışma şekli:** Yerel ve çevrimdışı masaüstü uygulaması

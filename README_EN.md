@@ -1,6 +1,6 @@
 # WinCare Manager
 
-[Türkçe](README.md) · **Version:** 0.2.0 · **Platform:** Windows 10/11 (64-bit) · **UI:** Türkçe / English · **Runs:** locally, offline
+[Türkçe](README.md) · **Version:** 0.3.0 · **Platform:** Windows 10/11 (64-bit) · **UI:** Türkçe / English · **Runs:** locally, offline
 
 WinCare Manager is a Windows maintenance and management tool. It analyses the system, performs safe maintenance and records every change so it can be undone.
 

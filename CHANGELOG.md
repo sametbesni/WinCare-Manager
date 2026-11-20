@@ -1,11 +1,12 @@
 # Değişiklik Kaydı
 
-## Yayınlanmamış
+## 0.3.0
 - **İşlem Yöneticisi – dijital imza:** "İmza" ve "Yayıncı" sütunları eklendi.
   - Durumlar: Geçerli, İmzasız, Geçersiz, Güvenilmeyen.
   - Denetim Windows'un kendi doğrulamasıyla (`Get-AuthenticodeSignature`) yapılıyor; gömülü imzalar ve Windows'un katalog imzaları birlikte denetleniyor. Ücretsiz, ek program veya çevrimiçi servis gerekmiyor.
   - Arka planda küçük dosyalardan büyüğe doğru denetleniyor. Her dosya bir kez denetlenip önbellekte tutuluyor; dosya değişirse yeniden denetleniyor.
   - İmzasız ve sorunlu olanlar renkle işaretleniyor ve "Yalnızca imzasız ve sorunlu olanlar" filtresiyle listelenebiliyor.
+- **Düzeltme:** Bilgisayarda PowerShell 7 kuruluysa Windows PowerShell yanlış modülü yüklemeye çalışıyordu. İmza denetimi, disk sağlığı ve olay günlüğü sorguları bu durumda sessizce boş dönüyordu.
 - **Düzeltme (performans):** Tablolar tema etkinken her yenilemede bütün sütun genişliklerini satır satır yeniden ölçüyordu. İşlem Yöneticisi her 2 saniyede yenilendiği için pencere dakikalarca donabiliyordu. Artık sütunlar ilk doldurmada bir kez boyutlanıyor ve kullanıcının ayarladığı genişlik korunuyor. Yenileme süreleri:
   - İşlem Yöneticisi: 83 s → 0,02 s
   - Gereksiz Dosya Temizliği (1500 satır): 500 s'den fazla → 0,05 s
@@ -16,6 +17,10 @@
   - devre dışı hizmetler başlatılmaz;
   - başlangıç türü hiçbir zaman değiştirilmez.
 - Hizmetler tablosunda uzun adlar artık diğer sütunları ekran dışına itmiyor.
+
+## 0.2.0
+
+### Yayın sırasında eklenenler
 - **Kurulum dosyası** (Inno Setup, `scripts/build_installer.ps1`):
   - varsayılan olarak yönetici yetkisi istemeden kurulur;
   - **masaüstü kısayolu** (varsayılan olarak işaretli) ve Başlat menüsü girdisi oluşturur;
@@ -30,8 +35,6 @@
 - `run_windows.bat` artık paketler eksikse hatayı gösterip bekliyor (önceden `pythonw` sessizce kapanıyordu).
 - Ana README `README.md` oldu (Türkçe); İngilizcesi `README_EN.md`.
 - Eski Tkinter taslağı (`python/`) kaldırıldı.
-
-## 0.2.0
 
 ### Yeni
 - **İşlem motoru ve güvenlik katmanı** (`core/engine.py`): yetki kontrolü → doğrulama → deneme modu → yedek → uygulama → kayıt. Arayüz sisteme doğrudan dokunmaz.
