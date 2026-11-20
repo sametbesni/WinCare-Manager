@@ -96,3 +96,12 @@ def test_missing_files_are_ordered_small_first(tmp_path) -> None:
     big.write_bytes(b"MZ" * 5000)
     small.write_bytes(b"MZ")
     assert SignatureCache().missing([str(big), str(small)]) == [str(small), str(big)]
+
+
+def test_powershell_env_drops_pwsh_module_path(monkeypatch) -> None:
+    from core.winproc import powershell_env
+
+    monkeypatch.setenv("PSModulePath", r"C:\Program Files\PowerShell\7\Modules")
+    parts = [part.lower().rstrip("\\") for part in powershell_env()["PSModulePath"].split(os.pathsep)]
+    assert not any("powershell\\7" in part for part in parts)
+    assert any(part.endswith("windowspowershell\\v1.0\\modules") for part in parts)
