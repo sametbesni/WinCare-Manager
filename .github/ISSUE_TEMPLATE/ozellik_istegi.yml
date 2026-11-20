@@ -1,0 +1,25 @@
+name: Özellik isteği / Feature request
+description: Yeni bir özellik veya iyileştirme önerin.
+labels: [öneri]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Hangi sorunu çözüyor?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Önerilen çözüm
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Proje kuralları
+      options:
+        - label: Öneri çevrimdışı çalışır; ağ erişimi, telemetri veya dış servis gerektirmez.
+          required: true
+        - label: Sistemi değiştiriyorsa deneme modu ve yedekleme ile çalışabilir.
+          required: true

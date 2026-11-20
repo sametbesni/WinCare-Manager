@@ -1,0 +1,42 @@
+name: Hata bildirimi / Bug report
+description: Beklenmeyen bir davranışı bildirin.
+labels: [hata]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: WinCare Manager sürümü
+      placeholder: "0.2.0"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows sürümü
+      placeholder: "Windows 11 23H2"
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Deneme modu açık mıydı?
+      options: ["Evet", "Hayır", "Bilmiyorum"]
+  - type: textarea
+    id: steps
+    attributes:
+      label: Adımlar
+      description: Hatayı yeniden oluşturmak için ne yaptınız?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Beklenen ve gerçekleşen davranış
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Günlük (isteğe bağlı)
+      description: "%LOCALAPPDATA%\WinCareManager\logs\wincare.log dosyasından ilgili satırlar. Paylaşmadan önce kişisel bilgileri silin."
+      render: text
