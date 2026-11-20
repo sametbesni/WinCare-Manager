@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QHBoxLayout, QHeaderView, QLineEdit, QPushButton
+from PySide6.QtWidgets import QHBoxLayout, QLineEdit, QPushButton
 
 from app.i18n import K
 from core import services
@@ -54,11 +54,6 @@ class ServicesPage(BasePage):
         self.root.addWidget(muted_label(self.t("services_control_note")))
         self.table = make_table([self.t("service_display_name"), self.t("service_name"), self.t("service_status"),
                                  self.t("service_start_type"), self.t("path_column")], stretch=(4,))
-        # Uzun görünen adlar diğer sütunları ekran dışına itmesin; kullanıcı genişliği ayarlayabilir.
-        header = self.table.horizontalHeader()
-        for column, width in ((0, 340), (1, 200)):
-            header.setSectionResizeMode(column, QHeaderView.ResizeMode.Interactive)
-            self.table.setColumnWidth(column, width)
         self.table.itemSelectionChanged.connect(self._update_buttons)
         self.root.addWidget(self.table, 1)
         self._entries: dict[str, ServiceEntry] = {}

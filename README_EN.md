@@ -6,7 +6,7 @@ WinCare Manager is a Windows maintenance and management tool. It analyses the sy
 
 ## Modules
 
-Overview · Junk File Cleanup (moves selected files to the **Recycle Bin**) · Startup Programs (enable/disable, never delete) · Process Manager · Registry (read-only viewer + key backup) · Windows Services (start/stop safe services; critical and security services are protected) · Disk Management (usage + physical disk health) · Backup & Restore (SHA-256 verified `.reg` backups) · System Diagnostics (health checks + event log) · Automatic Maintenance (**optional, off by default**; scheduled analysis only) · Operation History (SQLite) · Settings.
+Overview · Junk File Cleanup (moves selected files to the **Recycle Bin**) · Startup Programs (enable/disable, never delete) · Process Manager (with digital signature status and publisher) · Registry (read-only viewer + key backup) · Windows Services (start/stop safe services; critical and security services are protected) · Disk Management (usage + physical disk health) · Backup & Restore (SHA-256 verified `.reg` backups) · System Diagnostics (health checks + event log) · Automatic Maintenance (**optional, off by default**; scheduled analysis only) · Operation History (SQLite) · Settings.
 
 ## Safety principles
 

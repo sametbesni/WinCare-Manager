@@ -144,9 +144,46 @@ class SortItem(QTableWidgetItem):
             return str(self.sort_value) < str(other_value)
 
 
-def make_table(headers: Iterable[str], stretch: Iterable[int] = (), sortable: bool = True) -> QTableWidget:
+class DataTable(QTableWidget):
+    """Sütunlarını ilk veri geldiğinde bir kez boyutlandıran tablo.
+
+    Qt'nin "içeriğe göre boyutla" modu, tema (stylesheet) etkinken her hücre
+    değişiminde bütün satırları yeniden ölçer. Sık yenilenen veya binlerce
+    satırlı tablolarda bu, pencereyi saniyelerce hatta dakikalarca donduruyordu.
+    Bunun yerine sütunlar ilk doldurmada bir kez ölçülür; kullanıcı sonra
+    sürükleyerek genişlikleri değiştirebilir ve yenilemeler bunu bozmaz.
+
+    Sayfalar tabloyu ``setSortingEnabled(False)`` → satırlar →
+    ``setSortingEnabled(True)`` düzeniyle doldurur; boyutlandırma bu son çağrıda yapılır.
+    """
+
+    MAX_COLUMN_WIDTH = 360
+
+    def __init__(self, rows: int, columns: int, stretch: Iterable[int] = ()) -> None:
+        self._stretch = set(stretch)
+        self._sized = False
+        super().__init__(rows, columns)
+
+    def setSortingEnabled(self, enable: bool) -> None:  # noqa: N802 (Qt API)
+        super().setSortingEnabled(enable)
+        if enable and not getattr(self, "_sized", True) and self.rowCount():
+            self.fit_columns()
+
+    def fit_columns(self) -> None:
+        """Sütunları içeriğe göre bir kez boyutlandırır (en fazla MAX_COLUMN_WIDTH)."""
+        self._sized = True
+        for column in range(self.columnCount()):
+            if column in self._stretch:
+                continue
+            self.resizeColumnToContents(column)
+            if self.columnWidth(column) > self.MAX_COLUMN_WIDTH:
+                self.setColumnWidth(column, self.MAX_COLUMN_WIDTH)
+
+
+def make_table(headers: Iterable[str], stretch: Iterable[int] = (), sortable: bool = True) -> DataTable:
     headers = list(headers)
-    table = QTableWidget(0, len(headers))
+    stretch = tuple(stretch)
+    table = DataTable(0, len(headers), stretch)
     table.setHorizontalHeaderLabels(headers)
     table.setAlternatingRowColors(True)
     table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
@@ -156,7 +193,7 @@ def make_table(headers: Iterable[str], stretch: Iterable[int] = (), sortable: bo
     table.setSortingEnabled(sortable)
     table.setWordWrap(False)
     header = table.horizontalHeader()
-    header.setSectionResizeMode(QHeaderView.ResizeMode.ResizeToContents)
+    header.setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
     for column in stretch:
         header.setSectionResizeMode(column, QHeaderView.ResizeMode.Stretch)
     return table

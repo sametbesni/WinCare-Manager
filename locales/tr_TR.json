@@ -322,5 +322,17 @@
   "service_wrong_state": "\"{name}\" bu işlem için uygun durumda değil. Listeyi yenileyip tekrar deneyin.",
   "service_invalid_action": "\"{name}\": geçersiz işlem.",
   "kind_service_start": "Hizmet başlatma",
-  "kind_service_stop": "Hizmet durdurma"
+  "kind_service_stop": "Hizmet durdurma",
+  "sign_column": "İmza",
+  "signer_column": "Yayıncı",
+  "sign_valid": "Geçerli",
+  "sign_unsigned": "İmzasız",
+  "sign_invalid": "Geçersiz",
+  "sign_untrusted": "Güvenilmeyen",
+  "sign_unknown": "Bilinmiyor",
+  "sign_checking": "Denetleniyor...",
+  "sign_filter_attention": "Yalnızca imzasız ve sorunlu olanlar",
+  "sign_note": "İmza bilgisi Windows'un kendi doğrulamasıyla, arka planda denetlenir. İmzasız bir program kötü amaçlı demek değildir; ancak tanımadığınız imzasız programlara dikkat edin.",
+  "sign_attention_tip": "Bu dosyanın geçerli bir dijital imzası yok. Programı tanıyorsanız sorun olmayabilir; tanımıyorsanız dosya konumunu ve kaynağını kontrol edin.",
+  "sign_flagged_count": "{count} imzasız veya sorunlu"
 }

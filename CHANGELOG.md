@@ -1,6 +1,15 @@
 # Değişiklik Kaydı
 
 ## Yayınlanmamış
+- **İşlem Yöneticisi – dijital imza:** "İmza" ve "Yayıncı" sütunları eklendi.
+  - Durumlar: Geçerli, İmzasız, Geçersiz, Güvenilmeyen.
+  - Denetim Windows'un kendi doğrulamasıyla (`Get-AuthenticodeSignature`) yapılıyor; gömülü imzalar ve Windows'un katalog imzaları birlikte denetleniyor. Ücretsiz, ek program veya çevrimiçi servis gerekmiyor.
+  - Arka planda küçük dosyalardan büyüğe doğru denetleniyor. Her dosya bir kez denetlenip önbellekte tutuluyor; dosya değişirse yeniden denetleniyor.
+  - İmzasız ve sorunlu olanlar renkle işaretleniyor ve "Yalnızca imzasız ve sorunlu olanlar" filtresiyle listelenebiliyor.
+- **Düzeltme (performans):** Tablolar tema etkinken her yenilemede bütün sütun genişliklerini satır satır yeniden ölçüyordu. İşlem Yöneticisi her 2 saniyede yenilendiği için pencere dakikalarca donabiliyordu. Artık sütunlar ilk doldurmada bir kez boyutlanıyor ve kullanıcının ayarladığı genişlik korunuyor. Yenileme süreleri:
+  - İşlem Yöneticisi: 83 s → 0,02 s
+  - Gereksiz Dosya Temizliği (1500 satır): 500 s'den fazla → 0,05 s
+  - Windows Hizmetleri: 7 s → 0,01 s
 - **Windows Hizmetleri:** Seçilen hizmet başlatılıp durdurulabiliyor. İşlem, işlem motoru üzerinden onay, yönetici yetkisi, deneme modu ve geçmiş kaydıyla yapılıyor. Güvenlik kuralları:
   - kritik Windows ve güvenlik hizmetleri (RPC, Defender, güvenlik duvarı, olay günlüğü, Windows Update vb.) durdurulamaz;
   - başka çalışan hizmetlerin bağlı olduğu hizmetler durdurulmaz;

@@ -322,5 +322,17 @@
   "service_wrong_state": "\"{name}\" is not in the right state for this action. Refresh the list and try again.",
   "service_invalid_action": "\"{name}\": invalid action.",
   "kind_service_start": "Service start",
-  "kind_service_stop": "Service stop"
+  "kind_service_stop": "Service stop",
+  "sign_column": "Signature",
+  "signer_column": "Publisher",
+  "sign_valid": "Valid",
+  "sign_unsigned": "Unsigned",
+  "sign_invalid": "Invalid",
+  "sign_untrusted": "Untrusted",
+  "sign_unknown": "Unknown",
+  "sign_checking": "Checking...",
+  "sign_filter_attention": "Only unsigned and problematic",
+  "sign_note": "Signatures are checked in the background using Windows' own verification. Unsigned does not mean malicious, but be careful with unsigned programs you do not recognise.",
+  "sign_attention_tip": "This file has no valid digital signature. If you know the program this may be fine; otherwise check the file location and where it came from.",
+  "sign_flagged_count": "{count} unsigned or problematic"
 }

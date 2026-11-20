@@ -14,7 +14,7 @@ WinCare Manager, Windows için bir bakım ve yönetim aracıdır. Sistemi analiz
 | Genel Bakış | CPU, bellek ve disk göstergeleri, sağlık özeti, sistem bilgisi | Hayır |
 | Gereksiz Dosya Temizliği | Geçici dosyaları, çökme dökümlerini ve hata raporlarını listeler; seçilenleri **Geri Dönüşüm Kutusu'na** taşır | Evet, onayla |
 | Başlangıç Programları | Başlangıç girdilerini etkinleştirir veya devre dışı bırakır (silmez) | Evet, onay ve yedekle |
-| İşlem Yöneticisi | Çalışan işlemleri, CPU ve bellek kullanımını, dosya yollarını gösterir | Hayır |
+| İşlem Yöneticisi | Çalışan işlemleri, CPU ve bellek kullanımını, dosya yollarını ve **dijital imza** bilgisini (geçerli / imzasız / geçersiz, yayıncı) gösterir; imzasızları filtreler | Hayır |
 | Kayıt Defteri | Anahtarları gösterir ve yedekler | Hayır (yalnızca yedek alır) |
 | Windows Hizmetleri | Hizmet durumu ve başlangıç türü; güvenli hizmetleri başlatma ve durdurma (kritik ve güvenlik hizmetleri korunur) | Evet, onay ve yönetici yetkisiyle |
 | Disk Yönetimi | Sürücü doluluğu, fiziksel disk sağlığı | Hayır |
@@ -157,7 +157,6 @@ Uygulamanın ağ erişimi, telemetrisi, hesap sistemi ve dış servis bağlantı
 
 ## Sonraki adımlar
 
-- İşlemlerde dijital imza (imzalı/imzasız) bilgisi
 - Kod imzalama (SmartScreen uyarısını kaldırmak için)
 
 ## Katkıda bulunma
